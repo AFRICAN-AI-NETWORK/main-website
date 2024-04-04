@@ -13,6 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@sanity/client": "^6.15.9",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
