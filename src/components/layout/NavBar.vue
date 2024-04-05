@@ -6,7 +6,7 @@ const isOpen = ref(true);
 
 <template>
   <nav
-    class="fixed inset-0 bottom-auto grid grid-cols-2 md:flex justify-between items-center px-7 py-     3 bg-primary text-white">
+    class="fixed inset-0 bottom-auto grid grid-cols-2 md:flex justify-between items-center px-7 py-5 bg-black bg-opacity-10 backdrop-blur-md mix-blend-hard-light text-white">
     <a href="/">
       <p class="sr-only">Back to Home</p>
       <img src="@/assets/logo.png" alt="AAN logo" class="italic" width="50" height="50" />
