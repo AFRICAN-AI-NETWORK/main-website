@@ -20,8 +20,7 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "sanity": "^3.36.4",
-    "styled-components": "^6.0.7",
-    "swiper": "^11.1.0"
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^4.0.0",
