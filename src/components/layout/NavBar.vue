@@ -24,16 +24,16 @@ const isOpen = ref(false);
 
     <ul class="flex flex-col mt-3 md:flex-row md:mt-0 gap-5" :class="isOpen ? 'flex' : 'hidden md:flex'">
       <li>
-        <a href=" #ai-tools" class="hover:text-secondary focus-visible:text-secondary transition-all">AI Tools</a>
+        <a href="/#ai-tools" class="hover:text-secondary focus-visible:text-secondary transition-all">AI Tools</a>
       </li>
       <li>
-        <a href="#resources" class="hover:text-secondary focus-visible:text-secondary transition-all">Resources</a>
+        <a href="/#resources" class="hover:text-secondary focus-visible:text-secondary transition-all">Resources</a>
       </li>
       <li>
-        <a href="#courses" class="hover:text-secondary focus-visible:text-secondary transition-all">Courses</a>
+        <a href="/#courses" class="hover:text-secondary focus-visible:text-secondary transition-all">Courses</a>
       </li>
       <li>
-        <a href="#case-studies"
+        <a href="/#case-studies"
           class="hover:text-secondary focus-visible:text-secondary transition-all">Case-Studies</a>
       </li>
     </ul>

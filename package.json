@@ -13,7 +13,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@portabletext/vue": "^1.0.10",
     "@sanity/client": "^6.15.9",
+    "notiflix": "^3.2.7",
     "swiper": "^11.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
