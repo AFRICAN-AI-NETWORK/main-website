@@ -13,7 +13,7 @@ const isOpen = ref(false);
     </a>
 
     <button type="button"
-      class="justify-self-end md:hidden text-white hover:text-slate-100 focus:text-slate-100 focus:outline-none"
+      class="justify-self-end md:hidden text-white hover:text-slate-100 focus-visible:text-slate-100 focus-visible:outline-none"
       @click="isOpen = !isOpen">
       <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
         <path
