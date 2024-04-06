@@ -1,20 +1,20 @@
 <template>
   <section id="hero"
-    class="flex flex-col justify-between lg:flex-row gap-x-5 px-14 pt-32 lg:pt-16 lg:px-20 pb-0 min-h-dvh bg-cover bg-[url('/src/assets/hero-bg.jpg')] text-white">
-    <div class="w-full h-full flex flex-col self-center gap-6 lg:gap-14 xl:max-w-[50%]">
-      <h1 class="text-[min(4rem,_10vw)] xl:text-8xl tracking-tighter font-bold lg:max-w-[10ch]">Design. Think. Solve.
+    class="min-h-screen flex flex-col justify-between lg:flex-row gap-x-5 px-14 pt-[120px] lg:px-20 pb-0 bg-cover bg-[url('/src/assets/hero-bg.jpg')] text-white">
+    <div class="w-full h-full flex flex-col self-center gap-6 lg:gap-8 2xl:gap-12 xl:max-w-[50vw] 2xl:max-w-[50%]">
+      <h1 class="text-[min(4rem,_10vw)] xl:text-8xl tracking-tighter font-bold 2xl:max-w-[10ch]">Design. Think. Solve.
         and
         Develop.</h1>
       <p class="text-[min(2rem,_4vw)] xl:text-4xl">A collaborative hub for African AI Actors to explore, develop and
         implement AI
         solutions.</p>
 
-      <div class="flex flex-wrap gap-5">
+      <div class="flex flex-wrap gap-5 pb-8">
         <button class="btn">Join the Network</button>
         <button class="btn">Explore our Solutions</button>
       </div>
     </div>
 
-    <img src="@/assets/futuristic-robot.png" class="mt-auto xl:min-h-[50em] xl:max-w-none" alt="">
+    <img src="@/assets/futuristic-robot.png" class="mt-auto xl:max-w-none 2xl:min-h-[50em]" alt="">
   </section>
 </template>
