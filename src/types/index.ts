@@ -12,3 +12,15 @@ export type Resource = {
   updatedAt: Date
   slug: string
 }
+
+export type Feature = {
+  id: string
+  stats: number
+  description: string
+}
+
+export type Partner = {
+  id: string
+  name: string
+  logo: string
+}

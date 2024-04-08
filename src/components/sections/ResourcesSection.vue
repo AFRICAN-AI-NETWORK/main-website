@@ -3,12 +3,13 @@ import type { Resource } from '@/types';
 import { onMounted, ref } from 'vue';
 
 import ResourceCard from '@/components/simple/ResourceCard.vue';
+import SkeletonLoader from '../simple/SkeletonLoader.vue';
 
 import { A11y, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import sanity from '@/lib/sanity';
-import { Loading, Notify } from 'notiflix';
+import { Notify } from 'notiflix';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
@@ -17,6 +18,7 @@ import 'swiper/css/pagination';
 const modules = [Navigation, Pagination, A11y];
 
 const resources = ref<Resource[]>([])
+const loading = ref(false)
 
 const screenWidth = ref(window.innerWidth);
 window.addEventListener('resize', () => {
@@ -24,7 +26,7 @@ window.addEventListener('resize', () => {
 })
 
 onMounted(() => {
-  Loading.hourglass();
+  loading.value = true;
 
   sanity.fetch(`*[_type == "resource"] | order(createdAt) {
     "id": _id,
@@ -43,7 +45,7 @@ onMounted(() => {
   }).catch(() => {
     Notify.failure('Error fetching resources, please try again later');
   }).finally(() => {
-    Loading.remove();
+    loading.value = false;
   })
 })
 </script>
@@ -53,7 +55,11 @@ onMounted(() => {
     <h2 class="uppercase text-primary font-bold text-4xl">Resources:</h2>
 
     <div class="mt-10">
-      <swiper v-if="resources.length > 0" :modules="modules" :slides-per-view="screenWidth < 1024 ? 1 : 2.6"
+      <div v-if="loading" class="flex flex-wrap gap-5">
+        <skeleton-loader variant="image" v-for="i in 3" :key="i" />
+      </div>
+
+      <swiper v-else-if="resources.length > 0" :modules="modules" :slides-per-view="screenWidth < 1024 ? 1 : 2.6"
         :space-between="50" navigation :pagination="{ clickable: true }" :scrollbar="{ draggable: true }">
         <swiper-slide v-for="resource in resources" :key="resource.id">
           <resource-card :resource="resource" />
