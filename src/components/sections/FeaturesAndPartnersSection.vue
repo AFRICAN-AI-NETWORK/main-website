@@ -29,7 +29,6 @@ const fetchData = async () => {
     ])
 
     loading.value = false;
-    console.log(features.value, partners.value)
   } catch (error) {
     Notify.failure('Error loading data, please try again later');
   }

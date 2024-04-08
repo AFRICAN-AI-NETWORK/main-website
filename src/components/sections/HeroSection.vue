@@ -2,16 +2,15 @@
   <section id="hero"
     class="min-h-screen flex flex-col justify-between lg:flex-row gap-x-5 px-14 pt-[120px] lg:px-20 pb-0 bg-cover bg-[url('/src/assets/hero-bg.jpg')] text-white">
     <div class="w-full h-full flex flex-col self-center gap-6 lg:gap-8 2xl:gap-12 xl:max-w-[50vw] 2xl:max-w-[50%]">
-      <h1 class="text-[min(4rem,_10vw)] xl:text-8xl tracking-tighter font-bold 2xl:max-w-[10ch]">Design. Think. Solve.
-        and
-        Develop.</h1>
+      <h1 class="text-[min(4rem,_10vw)] xl:text-8xl tracking-tighter font-bold">#DISCOVER #CONNECT
+        #IMPACT</h1>
       <p class="text-[min(2rem,_4vw)] xl:text-4xl">A collaborative hub for African AI Actors to explore, develop and
         implement AI
         solutions.</p>
 
       <div class="flex flex-wrap gap-5 pb-8">
-        <button class="btn">Join the Network</button>
-        <button class="btn">Explore our Solutions</button>
+        <a class="btn" href="https://discord.gg/hR4GsHSXkJ">Join the Network</a>
+        <a class="btn" href="#resources">Explore our Solutions</a>
       </div>
     </div>
 
