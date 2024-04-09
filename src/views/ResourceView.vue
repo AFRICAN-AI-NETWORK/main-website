@@ -7,7 +7,7 @@ import { onBeforeRouteUpdate, useRoute } from 'vue-router';
 import { PortableText } from '@portabletext/vue';
 
 // Obtain slug from url
-const resource = ref < Resource > ()
+const resource = ref<Resource>()
 const loading = ref(false)
 
 const fetchData = (slug: string) => {
@@ -60,7 +60,7 @@ onMounted(() => {
         <PortableText :value="resource.body" />
       </div>
 
-      <div class="mt-10 p-5 border rounded-lg">
+      <div v-if="resource.authorName" class="mt-10 p-5 border rounded-lg">
         <div class="flex flex-col gap-3 md:gap-0 md:flex-row md:items-center">
           <img class="w-16 h-16 rounded-full mr-3 object-contain" :src="resource.authorImageUrl"
             :alt="resource.authorName">
@@ -69,7 +69,7 @@ onMounted(() => {
               class="font-medium leading-none text-blue-200 hover:text-indigo-600 transition duration-500 ease-in-out">
               {{ resource.authorName }}
             </a>
-            <PortableText :value="resource.authorBio" />
+            <PortableText class="unreset" :value="resource.authorBio" />
           </div>
         </div>
       </div>
