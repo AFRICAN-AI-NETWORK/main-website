@@ -45,4 +45,3 @@ The AFRICAN AI NETWORK is licensed under the [MIT License](LICENSE).
 
 ## Website Screenshot
 ![AFRICAN AI NETWORK Screenshot](https://github.com/AFRICAN-AI-NETWORK/main-website/assets/101122860/aa7265b7-4002-45ad-9b65-773c142d2f86)
-)
