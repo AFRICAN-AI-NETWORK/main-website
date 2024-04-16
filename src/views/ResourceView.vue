@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import sanity from '@/lib/sanity';
 import type { Resource } from '@/types';
+import { PortableText } from '@portabletext/vue';
 import { Loading, Notify } from 'notiflix';
 import { onMounted, ref } from 'vue';
 import { onBeforeRouteUpdate, useRoute } from 'vue-router';
-import { PortableText } from '@portabletext/vue';
 
 // Obtain slug from url
-const resource = ref<Resource>()
-const loading = ref(false)
+const resource = ref<Resource>();
+const loading = ref(false);
 
 const fetchData = (slug: string) => {
   Loading.hourglass();
-  loading.value = true
+  loading.value = true;
 
   // Obtain resource from sanity using slug
   sanity.fetch(`*[_type == "resource" && slug.current == '${slug}'][0] {
@@ -29,27 +29,27 @@ const fetchData = (slug: string) => {
     "createdAt": _createdAt,
     "updatedAt": _updatedAt
 }`).then((responseData) => {
-    resource.value = responseData
+    resource.value = responseData;
   }).catch(() => {
     Notify.failure('Error fetching resource, please try again later');
   }).finally(() => {
     Loading.remove();
-    loading.value = false
+    loading.value = false;
   })
 }
 
 onBeforeRouteUpdate(async (to) => {
-  const slug = to.params.slug
-  if (!slug || Array.isArray(slug)) return
+  const slug = to.params.slug;
+  if (!slug || Array.isArray(slug)) return history.replaceState({}, '', '/'); // Redirect to home page is slug is missing or invalid
 
-  fetchData(slug)
+  fetchData(slug);
 })
 
 onMounted(() => {
-  const slug = useRoute().params.slug
-  if (!slug || Array.isArray(slug)) return
+  const slug = useRoute().params.slug;
+  if (!slug || Array.isArray(slug)) return history.replaceState({}, '', '/'); // Redirect to home page is slug is missing or invalid
 
-  fetchData(slug)
+  fetchData(slug);
 })
 </script>
 
