@@ -1,39 +1,47 @@
-# website
+# AFRICAN AI NETWORK
 
-This template should help get you started developing with Vue 3 in Vite.
+## Introduction
 
-## Recommended IDE Setup
+The AFRICAN AI NETWORK is a vibrant online community and resource platform designed to connect and empower African AI actors – researchers, innovators, and entrepreneurs. Our mission is to foster collaboration, knowledge sharing, and the development of responsible AI solutions that address Africa's unique challenges and opportunities.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+**Deployed Site:** [https://africanainetwork.com](https://africanainetwork.com)
 
-## Type Support for `.vue` Imports in TS
+**Final Project Blog Article:** [https://www.linkedin.com/posts/enwono-edo-308a33175_a-blog-post-about-my-journey-with-alx-final-activity-7183778002751676417-ZAKW](https://www.linkedin.com/posts/enwono-edo-308a33175_a-blog-post-about-my-journey-with-alx-final-activity-7183778002751676417-ZAKW)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+**Author's LinkedIn:** [Enwono Edo](https://www.linkedin.com/in/enwono-edo-308a33175/)
 
-## Customize configuration
+## Installation
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+The AFRICAN AI NETWORK is a web-based platform, so there is no installation required. Users can access the platform by visiting the deployed site at [https://africanainetwork.com](https://africanainetwork.com).
 
-## Project Setup
+## Usage
 
-```sh
-pnpm install
-```
+The African AI Network is designed for easy use and participation. Here's how you can get involved:
 
-### Compile and Hot-Reload for Development
+1. **Join the Community:** Sign up for a free account to connect with other AI enthusiasts, access resources, and participate in discussions.
+2. **Explore Resources:** Discover a wealth of valuable resources, including articles, tutorials, case studies, and datasets relevant to AI in Africa.
+3. **Contribute:** Share your expertise, projects, or ideas to help build the African AI knowledge base.
+4. **Connect and Collaborate:** Find partners and collaborators for your AI-powered ventures through our online network.
 
-```sh
-pnpm dev
-```
+## Contributing
 
-### Type-Check, Compile and Minify for Production
+We welcome contributions from the African AI community. If you would like to contribute to the AFRICAN AI NETWORK website, please follow these steps:
 
-```sh
-pnpm build
-```
+1. Fork the repository
+2. Create a new branch for your feature
+3. Commit your changes
+4. Push to the branch
+5. Submit a pull request
 
-### Lint with [ESLint](https://eslint.org/)
+## Related Projects
 
-```sh
-pnpm lint
-```
+- [AI4D Africa](https://www.ai4d.africa/)
+- [AI Hub Africa](https://aihub.africa/)
+- [Deep Learning Indaba](https://www.deeplearningindaba.com/)
+
+## Licensing
+
+The AFRICAN AI NETWORK is licensed under the [MIT License](LICENSE).
+
+## Website Screenshot
+![AFRICAN AI NETWORK Screenshot](https://github.com/AFRICAN-AI-NETWORK/main-website/assets/101122860/aa7265b7-4002-45ad-9b65-773c142d2f86)
