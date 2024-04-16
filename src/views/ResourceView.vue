@@ -40,14 +40,14 @@ const fetchData = (slug: string) => {
 
 onBeforeRouteUpdate(async (to) => {
   const slug = to.params.slug;
-  if (!slug || Array.isArray(slug)) return history.replaceState({}, '', '/'); // Redirect to home page is slug is missing or invalid
+  if (!slug || Array.isArray(slug)) return history.replaceState({}, '', '/'); // Redirect to home page if slug is missing or invalid
 
   fetchData(slug);
 })
 
 onMounted(() => {
   const slug = useRoute().params.slug;
-  if (!slug || Array.isArray(slug)) return history.replaceState({}, '', '/'); // Redirect to home page is slug is missing or invalid
+  if (!slug || Array.isArray(slug)) return history.replaceState({}, '', '/'); // Redirect to home page if slug is missing or invalid
 
   fetchData(slug);
 })
