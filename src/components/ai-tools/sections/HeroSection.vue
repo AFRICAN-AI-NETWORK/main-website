@@ -9,43 +9,43 @@ const tools = [
     id: "iiwiwi-wiiwd-iwndnwd-iwndnwj",
     name: "GummySearch",
     type: "Freemium",
-    description: "My very very very long description that should be truncated under normal circumstances"
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
   },
   {
     id: "iikiwi-wiiwd-iwndnwd-iwndnwj",
     name: "GummySearch",
     type: "Freemium",
-    description: "My very very very long description that should be truncated under normal circumstances"
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
   },
   {
     id: "iiwiwi-wiewd-iwndnwd-iwndnwj",
     name: "GummySearch",
     type: "Freemium",
-    description: "My very very very long description that should be truncated under normal circumstances"
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
   },
   {
     id: "iiwiwi-wiiwd-iwnsnwd-iwndnwj",
     name: "GummySearch",
     type: "Freemium",
-    description: "My very very very long description that should be truncated under normal circumstances"
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
   },
   {
     id: "iiwiwi-wiiwd-iwndnad-iwndnwj",
     name: "GummySearch",
     type: "Freemium",
-    description: "My very very very long description that should be truncated under normal circumstances"
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
   },
   {
     id: "iiwiwi-wiiwd-iwndawd-iwndnwj",
     name: "GummySearch",
     type: "Freemium",
-    description: "My very very very long description that should be truncated under normal circumstances"
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
   },
   {
     id: "iiwiwi-wiiwd-iwndawd-iwndnwj",
     name: "GummySearch",
     type: "Freemium",
-    description: "My very very very long description that should be truncated under normal circumstances"
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
   }
 ]
 </script>
