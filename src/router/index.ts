@@ -11,6 +11,11 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/ai-tools',
+      name: 'ai-tools',
+      component: () => import('../views/AIToolsView.vue')
+    },
+    {
       path: '/resources/:slug',
       name: 'resource',
       component: ResourceView

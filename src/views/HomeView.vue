@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import FeaturesAndPartnersSection from '@/components/sections/FeaturesAndPartnersSection.vue';
-import HeroSection from '@/components/sections/HeroSection.vue';
-import ReviewsSection from '@/components/sections/ReviewsSection.vue';
-import ResourcesSection from '@/components/sections/ResourcesSection.vue';
+import NavBar from '@/components/layout/NavBar.vue';
+
+import FeaturesAndPartnersSection from '@/components/home/sections/FeaturesAndPartnersSection.vue';
+import HeroSection from '@/components/home/sections/HeroSection.vue';
+import ReviewsSection from '@/components/home/sections/ReviewsSection.vue';
+import ResourcesSection from '@/components/home/sections/ResourcesSection.vue';
 </script>
 
 <template>
+  <header>
+    <nav-bar />
+  </header>
+
   <main>
     <hero-section />
     <features-and-partners-section />

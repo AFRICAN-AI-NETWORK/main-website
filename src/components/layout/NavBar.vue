@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, defineProps } from 'vue';
 
 const isOpen = ref(false);
+
+defineProps<{ blueBg?: bool }>()
 </script>
 
 <template>
-  <nav
-    class="fixed inset-0 bottom-auto grid grid-cols-2 md:flex justify-between items-center px-7 py-5 backdrop-blur-md bg-black bg-opacity-10 mix-blend-hard-light text-white">
+  <nav class="fixed z-50 inset-0 bottom-auto grid grid-cols-2 md:flex justify-between items-center px-7 py-5 text-white"
+    :class="blueBg ? 'bg-primary' : 'bg-black bg-opacity-10 backdrop-blur-md mix-blend-hard-light'">
     <a href="/">
       <p class="sr-only">Back to Home</p>
       <img src="@/assets/logo.png" alt="AAN logo" class="italic" width="100" height="100" />
@@ -24,17 +26,16 @@ const isOpen = ref(false);
 
     <ul class="flex flex-col mt-3 md:flex-row md:mt-0 gap-5" :class="isOpen ? 'flex' : 'hidden md:flex'">
       <li>
-        <a href="/#ai-tools" class="hover:text-secondary focus-visible:text-secondary transition-all">AI Tools</a>
+        <a href="/ai-tools" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">AI Tools</a>
       </li>
       <li>
-        <a href="/#resources" class="hover:text-secondary focus-visible:text-secondary transition-all">Resources</a>
+        <a href="/#resources" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Resources</a>
       </li>
       <li>
-        <a href="/#courses" class="hover:text-secondary focus-visible:text-secondary transition-all">Courses</a>
+        <a href="/#courses" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Courses</a>
       </li>
       <li>
-        <a href="/#case-studies"
-          class="hover:text-secondary focus-visible:text-secondary transition-all">Case-Studies</a>
+        <a href="/#case-studies" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Case-Studies</a>
       </li>
     </ul>
   </nav>

@@ -3,7 +3,7 @@ import type { Resource } from '@/types';
 import { onMounted, ref } from 'vue';
 
 import ResourceCard from '@/components/simple/ResourceCard.vue';
-import SkeletonLoader from '../simple/SkeletonLoader.vue';
+import SkeletonLoader from '@/components/simple/SkeletonLoader.vue';
 
 import { A11y, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
