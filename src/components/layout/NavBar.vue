@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
 
 const isOpen = ref(false);
 
-defineProps<{ blueBg?: bool }>()
+defineProps<{ blueBg?: boolean }>()
 </script>
 
 <template>
