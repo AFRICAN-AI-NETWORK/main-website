@@ -1,6 +1,6 @@
 <template>
   <section id="reviews"
-    class="flex flex-col-reverse 2xl:flex-row justify-between gap-x-5 gap-y-10 pt-10 px-16 pb-0 lg:px-20 bg-secondary text-white">
+    class="flex flex-col-reverse 2xl:flex-row justify-between gap-x-5 gap-y-10 pt-10 px-16 pb-0 lg:px-20 bg-secondary text-white xl:min-h-screen">
     <img src="@/assets/white-robot.svg" class="mt-auto 2xl:max-w-[50%]" alt="" />
 
     <div
