@@ -27,10 +27,10 @@ const fetchData = async () => {
         "logo": logo.asset->url
       }`)
     ])
-
-    loading.value = false;
   } catch (error) {
     Notify.failure('Error loading data, please try again later');
+  } finally {
+    loading.value = false
   }
 }
 
@@ -40,12 +40,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="features-and-partners" class="p-16 lg:p-20">
+  <section v-if="loading || (!loading && (features && features.length > 0 || partners && partners.length > 0))"
+    id="features-and-partners" class="p-16 lg:p-20">
     <div class="flex flex-wrap justify-center gap-5 lg:px-32" v-if="loading">
       <skeleton-loader variant="image-and-text" v-for="i in 4" :key="i" />
     </div>
 
-    <template v-else>
+    <template v-else-if="features && partners && (features.length > 0 || partners.length > 0)">
       <div v-if="partners && partners.length > 0" class=" flex flex-wrap justify-center gap-10 lg:px-32 mb-16">
         <partner-chip v-for="partner in partners" :key="partner.id" :name="partner.name" :logo="partner.logo" />
       </div>

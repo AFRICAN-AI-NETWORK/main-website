@@ -51,7 +51,7 @@ const tools = [
 </script>
 
 <template>
-  <section class="min-h-dvh grid mt-[120px] xl:mt-[200px] pt-10 px-5 pb-5 lg:p-0 lg:place-items-center">
+  <section class="mt-[200px] min-h-dvh grid pt-10 px-5 pb-5 lg:p-0 lg:place-items-center">
     <div class="flex flex-col gap-4 items-center">
       <h1 class="text-5xl 2xl:text-7xl font-extrabold text-secondary">Discover what AI can do for you</h1>
       <h2 class="text-xl 2xl:text-2xl font-bold text-secondary">We've helped professionals leverage AI by helping
@@ -75,8 +75,26 @@ const tools = [
       </div>
     </div>
 
-    <div class="mt-10 flex flex-col px-16 w-full">
-      <div class="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-5">
+    <div class="mt-20 xl:mt-32 flex flex-col lg:px-16 w-full">
+      <div class="flex flex-wrap gap-2 text-sm text-white">
+        <label
+          class="py-3 px-8 rounded-full bg-secondary cursor-pointer has-[input:checked]:bg-primary has-[input:checked]:outline has-[input:checked]:outline-1 has-[input:checked]:outline-secondary">
+          <p>Featured</p>
+          <input type="radio" name="classification" aria-label="Featured" hidden checked />
+        </label>
+        <label
+          class="py-3 px-8 rounded-full bg-secondary cursor-pointer has-[input:checked]:bg-primary has-[input:checked]:outline has-[input:checked]:outline-1 has-[input:checked]:outline-secondary">
+          <p>Popular</p>
+          <input type="radio" name="classification" aria-label="Popular" hidden />
+        </label>
+        <label
+          class="py-3 px-8 rounded-full bg-secondary cursor-pointer has-[input:checked]:bg-primary has-[input:checked]:outline has-[input:checked]:outline-1 has-[input:checked]:outline-secondary">
+          <p>New</p>
+          <input type="radio" name="classification" aria-label="New" hidden />
+        </label>
+      </div>
+
+      <div class="mt-5 grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-5">
         <ai-tool v-for="tool in tools.slice(0, showingMore ? tools.length - 1 : 5)" :key="tool.id" :tool="tool" />
       </div>
 

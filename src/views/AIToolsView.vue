@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NavBar from '@/components/layout/NavBar.vue';
 
+import AiToolsCategories from '@/components/ai-tools/sections/AiToolsCategories.vue';
 import HeroSection from '@/components/ai-tools/sections/HeroSection.vue';
 </script>
 
@@ -11,5 +12,6 @@ import HeroSection from '@/components/ai-tools/sections/HeroSection.vue';
 
   <main>
     <hero-section />
+    <ai-tools-categories />
   </main>
 </template>
