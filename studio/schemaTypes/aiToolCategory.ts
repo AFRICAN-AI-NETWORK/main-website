@@ -1,24 +1,21 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'partner',
-  title: 'Partner',
+  name: 'aiToolCategory',
+  title: 'AI Tool Category',
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Partner Name',
+      name: 'title',
+      title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'logo',
-      title: 'Partner Logo',
-      type: 'image',
+      name: 'description',
+      title: 'Description',
+      type: 'text',
       validation: (Rule) => Rule.required(),
-      options: {
-        hotspot: true,
-      },
     }),
   ],
 })
