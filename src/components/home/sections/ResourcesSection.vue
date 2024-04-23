@@ -31,7 +31,7 @@ onMounted(() => {
   sanity.fetch(`*[_type == "resource"] | order(createdAt) {
     "id": _id,
     title,
-    "category": categories[0]->title,
+    "category": category->title,
     body,
     "slug": slug.current,
     "authorName": author->name,

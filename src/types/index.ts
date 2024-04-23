@@ -8,9 +8,37 @@ export type Resource = {
   authorName: string
   authorBio: any
   authorImageUrl: string
+  slug: string
   createdAt: Date
   updatedAt: Date
+}
+
+export type AiTool = {
+  id: string
+  name: string
+  description: string
+  verified: boolean
+  categories: Category[]
+  pricingModel: string
+  stars: number
+  body: any
+  siteUrl: string
+  featured: boolean
+  imageUrl?: string
+  imageAlt?: string
+  ytVideoUrl?: string
+  alt: string
+  authorName: string
+  authorBio: any
+  authorImageUrl: string
   slug: string
+  createdAt: Date
+  updatedAt: Date
+}
+
+export type Category = {
+  title: string
+  description: string
 }
 
 export type Feature = {

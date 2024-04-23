@@ -1,53 +1,43 @@
 <script setup lang="ts">
-import AiTool from '@/components/simple/AiTool.vue';
-import { ref } from 'vue';
+import AiToolCard from '@/components/simple/AiToolCard.vue';
+import SkeletonLoader from '@/components/simple/SkeletonLoader.vue';
+import sanity from '@/lib/sanity';
+import type { AiTool } from '@/types';
+import { Notify } from 'notiflix';
+import { onMounted, ref } from 'vue';
 
 const showingMore = ref(false);
 
-const tools = [
-  {
-    id: "iiwiwi-wiiwd-iwndnwd-iwndnwj",
-    name: "GummySearch",
-    type: "Freemium",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
-  },
-  {
-    id: "iikiwi-wiiwd-iwndnwd-iwndnwj",
-    name: "GummySearch",
-    type: "Freemium",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
-  },
-  {
-    id: "iiwiwi-wiewd-iwndnwd-iwndnwj",
-    name: "GummySearch",
-    type: "Freemium",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
-  },
-  {
-    id: "iiwiwi-wiiwd-iwnsnwd-iwndnwj",
-    name: "GummySearch",
-    type: "Freemium",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
-  },
-  {
-    id: "iiwiwi-wiiwd-iwndnad-iwndnwj",
-    name: "GummySearch",
-    type: "Freemium",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
-  },
-  {
-    id: "iiwiwi-wiiwd-iwndawd-iwndnwj",
-    name: "GummySearch",
-    type: "Freemium",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
-  },
-  {
-    id: "iiwiwi-wiiwd-iwndawd-iwndnwj",
-    name: "GummySearch",
-    type: "Freemium",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptates dolores numquam hic. Neque repudiandae, eaque unde consequatur autem accusantium iure non suscipit maxime nihil explicabo dolores minu similique abi"
-  }
-]
+const tools = ref<AiTool[]>([])
+const loading = ref(false)
+
+onMounted(() => {
+  loading.value = true;
+
+  sanity.fetch(`*[_type == "aiTool"] | order(createdAt) {
+    "id": _id,
+    name,
+     categories[]->,
+    pricingModel,
+    description,
+    body,
+    stars,
+    "slug": slug.current,
+    "authorName": author->name,
+    "authorImageUrl": author->image.asset->url,
+    ytVideoUrl,
+    "imageUrl": mainImage.asset->url,
+    "imageAlt": mainImage.alt,
+    "createdAt": _createdAt,
+    "updatedAt": _updatedAt
+  }`).then((responseData) => {
+    tools.value = responseData
+  }).catch(() => {
+    Notify.failure('Error fetching tools, please try again later');
+  }).finally(() => {
+    loading.value = false;
+  })
+})
 </script>
 
 <template>
@@ -94,12 +84,21 @@ const tools = [
         </label>
       </div>
 
-      <div class="mt-5 grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-5">
-        <ai-tool v-for="tool in tools.slice(0, showingMore ? tools.length - 1 : 5)" :key="tool.id" :tool="tool" />
+      <div v-if="loading" class="flex flex-wrap gap-5">
+        <skeleton-loader variant="image" v-for="i in 3" :key="i" />
       </div>
 
-      <button v-if="!showingMore && (tools.length > 6)" @click="() => showingMore = true"
-        class="mt-5 bg-primary text-white rounded-full px-8 py-2 w-fit mx-auto">More</button>
+      <template v-else-if="tools.length > 0">
+        <div class="mt-5 grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-5">
+          <ai-tool-card v-for="tool in tools.slice(0, showingMore ? tools.length - 1 : 5)" :key="tool.id"
+            :tool="tool" />
+        </div>
+
+        <button v-if="!showingMore && (tools.length > 6)" @click="() => showingMore = true"
+          class="mt-5 bg-primary text-white rounded-full px-8 py-2 w-fit mx-auto">More</button>
+      </template>
+
+      <p v-else class="text-center text-xl mt-5">No tools found</p>
     </div>
   </section>
 </template>
