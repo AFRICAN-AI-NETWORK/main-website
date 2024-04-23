@@ -29,9 +29,9 @@ defineProps<{
 
     <div v-if="featured" class="mt-3 flex gap-2">
       <button
-        class="btn text-sm flex border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
+        class="btn text-sm flex gap-1 items-center border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
         0</button>
-      <a class="btn text-sm flex" :href="tool.siteUrl">Visit Site <external-link-icon /></a>
+      <a class="btn text-sm items-center gap-1 flex" :href="tool.siteUrl">Visit Site <external-link-icon /></a>
     </div>
     <a v-else class="block w-fit ml-auto mt-3 p-2 rounded-lg border-2 border-white text-sm"
       :href="`/ai-tools/${tool.slug}`">See

@@ -151,9 +151,9 @@ onMounted(() => {
 
           <div class="flex gap-5">
             <button
-              class="btn flex border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
+              class="btn flex gap-1 items-center border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
               0</button>
-            <a class="btn flex" :href="tool.siteUrl">Visit Site <external-link-icon /></a>
+            <a class="btn flex gap-1 items-center" :href="tool.siteUrl">Visit Site <external-link-icon /></a>
           </div>
         </div>
 
