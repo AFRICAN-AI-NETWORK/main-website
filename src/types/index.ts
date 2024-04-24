@@ -37,6 +37,8 @@ export type AiTool = {
 }
 
 export type Category = {
+  id: string
+  numTools: number
   title: string
   description: string
 }

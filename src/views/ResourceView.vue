@@ -157,14 +157,14 @@ onMounted(() => {
 
   <main class="min-h-dvh">
     <div v-if="resource" class="pt-40 xl:pt-36 p-16">
-      <div class="flex flex-col justify-between">
-        <div class="flex items-center gap-5">
-          <img src="@/assets/futuristic-robot.svg" class="h-full w-24 min-h-0 min-w-0 bg-black bg-opacity-70" alt="">
-          <div class="flex flex-col justify-center">
-            <p class="text-5xl font-bold">{{ resource.title }}</p>
-            <p class="mt-2"><span class="font-semibold">Category: </span><span class="text-primary">{{
+      <div class="grid gap-5 xl:grid-cols-2 items-center">
+        <div class="flex flex-col justify-center gap-3">
+          <p class="text-5xl font-bold">{{ resource.title }}</p>
+
+          <div>
+            <p><span class="font-semibold">Category: </span><span class="text-primary">{{
               toTitleCase(resource.category) }}</span></p>
-            <p class="mt-2">
+            <p class="mt-1">
               <span class="font-semibold">Follow: </span>
               <span class="inline-flex gap-2">
                 <a href="https://www.facebook.com/groups/1490131391564053/?ref=share" title="Visit our Facebook Page">
@@ -181,11 +181,12 @@ onMounted(() => {
                 </a>
               </span>
             </p>
-            <button
-              class="btn w-fit flex border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
-              0</button>
           </div>
+          <button
+            class="btn w-fit flex border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
+            0</button>
         </div>
+        <img :src="resource.imageUrl" class="h-96 w-full object-cover" :alt="resource.imageAlt" />
       </div>
 
       <div class="grid gap-10 xl:grid-cols-[65%_35%] mt-20">

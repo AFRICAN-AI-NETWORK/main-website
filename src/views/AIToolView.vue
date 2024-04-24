@@ -113,7 +113,7 @@ onMounted(() => {
       <div class="grid gap-5 xl:grid-cols-2">
         <div class="flex flex-col justify-between">
           <div class="flex gap-4">
-            <img src="@/assets/futuristic-robot.svg" class="h-24 w-24 min-h-0 min-w-0 bg-black bg-opacity-70" alt="">
+            <img :src="tool.imageUrl" class="h-24 w-24 min-h-0 min-w-0 bg-black bg-opacity-70" alt="">
             <div class="flex flex-col justify-center">
               <p class="text-5xl font-bold">{{ tool.name }}</p>
               <p class="flex flex-wrap gap-1">

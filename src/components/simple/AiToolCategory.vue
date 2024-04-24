@@ -1,10 +1,8 @@
 <script setup lang="ts">
+import type { Category } from '@/types';
+
 defineProps<{
-  category: {
-    id: string;
-    name: string,
-    numTools: number,
-  }
+  category: Category
 }>()
 </script>
 
@@ -13,7 +11,7 @@ defineProps<{
     <img src="@/assets/text.svg" class="h-16 w-16" alt="">
 
     <div class="flex flex-col justify-between">
-      <p class="text-lg font-bold">{{ category.name }}</p>
+      <p class="text-lg font-bold">{{ category.title }}</p>
       <p class="">{{ category.numTools }} Tools</p>
     </div>
   </div>

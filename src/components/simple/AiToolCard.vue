@@ -11,8 +11,8 @@ defineProps<{
 <template>
   <div class="bg-primary text-white rounded-xl p-5" :class="featured ? 'shadow-lg !bg-white !text-black' : ''">
     <div class="flex gap-2">
-      <img src="@/assets/futuristic-robot.svg"
-        class="self-center h-16 w-16 min-h-0 min-w-0 rounded-xl bg-black bg-opacity-70" alt="">
+      <img :src="tool.imageUrl" class="self-center h-16 w-16 min-h-0 min-w-0 rounded-xl bg-black bg-opacity-70"
+        :alt="tool.imageAlt">
       <div>
         <p class="text-lg font-bold">{{ tool.name }}</p>
         <p class="flex gap-1">

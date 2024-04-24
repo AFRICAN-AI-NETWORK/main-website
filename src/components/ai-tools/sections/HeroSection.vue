@@ -84,7 +84,7 @@ onMounted(() => {
         </label>
       </div>
 
-      <div v-if="loading" class="flex flex-wrap gap-5">
+      <div v-if="loading" class="mt-5 flex flex-wrap gap-5">
         <skeleton-loader variant="image" v-for="i in 3" :key="i" />
       </div>
 
@@ -98,7 +98,7 @@ onMounted(() => {
           class="mt-5 bg-primary text-white rounded-full px-8 py-2 w-fit mx-auto">More</button>
       </template>
 
-      <p v-else class="text-center text-xl mt-5">No tools found</p>
+      <p v-else class="font-semibold text-lg mt-5">No tool found</p>
     </div>
   </section>
 </template>
