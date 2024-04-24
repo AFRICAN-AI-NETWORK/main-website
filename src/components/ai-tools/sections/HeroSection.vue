@@ -49,7 +49,7 @@ onMounted(() => {
         find the best
         AI tools.</h2>
 
-      <form class="flex w-fit border-4 border-primary rounded-full p-2 my-5">
+      <form class="flex w-fit p-1 lg:p-2 my-5 border-4 border-primary rounded-full text-sm lg:text-base">
         <input type="search" placeholder="Enter name..."
           class="bg-transparent m-0 outline-none px-4 py-2 placeholder:text-secondary placeholder:opacity-70"
           aria-label="Search for AI Tool" />
