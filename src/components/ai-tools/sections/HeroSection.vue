@@ -41,7 +41,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="mt-[200px] min-h-dvh grid pt-10 px-5 pb-5 lg:p-0 lg:place-items-center">
+  <section class="mt-[150px] md:mt-[200px] min-h-dvh grid pt-10 px-5 pb-5 lg:p-0 lg:place-items-center">
     <div class="flex flex-col gap-4 items-center">
       <h1 class="text-5xl 2xl:text-7xl font-extrabold text-secondary">Discover what AI can do for you</h1>
       <h2 class="text-xl 2xl:text-2xl font-bold text-secondary">We've helped professionals leverage AI by helping
@@ -49,7 +49,8 @@ onMounted(() => {
         find the best
         AI tools.</h2>
 
-      <form class="flex w-fit p-1 lg:p-2 my-5 border-4 border-primary rounded-full text-sm lg:text-base">
+      <form
+        class="flex w-fit max-w-[100%] p-1 lg:p-2 my-5 border-4 border-primary rounded-full text-xs md:text-sm lg:text-base">
         <input type="search" placeholder="Enter name..."
           class="bg-transparent m-0 outline-none px-4 py-2 placeholder:text-secondary placeholder:opacity-70"
           aria-label="Search for AI Tool" />
