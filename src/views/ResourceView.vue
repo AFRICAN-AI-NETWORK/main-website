@@ -163,7 +163,7 @@ onMounted(() => {
 
           <div>
             <p><span class="font-semibold">Category: </span><span class="text-primary">{{
-              toTitleCase(resource.category) }}</span></p>
+                toTitleCase(resource.category) }}</span></p>
             <p class="mt-1">
               <span class="font-semibold">Follow: </span>
               <span class="inline-flex gap-2">
@@ -206,13 +206,13 @@ onMounted(() => {
 
             <ul class="flex flex-col gap-2 my-4">
               <li class="flex items-center gap-2">
-                <check-circle-icon />Join 200 professionals adopting AI tools for work
+                <check-circle-icon />Bookmark 100s of AI tools that interest you
               </li>
               <li class="flex items-center gap-2">
-                <check-circle-icon />Join 200 professionals adopting AI tools for work
+                <check-circle-icon />Get personalized AI tool recommendations every week
               </li>
               <li class="flex items-center gap-2">
-                <check-circle-icon />Join 200 professionals adopting AI tools for work
+                <check-circle-icon />Free weekly newsletter with practical news, trending tools, tutorials and more
               </li>
             </ul>
 

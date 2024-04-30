@@ -188,13 +188,13 @@ onMounted(() => {
 
             <ul class="flex flex-col gap-2 my-4">
               <li class="flex items-center gap-2">
-                <check-circle-icon />Join 200 professionals adopting AI tools for work
+                <check-circle-icon />Bookmark 100s of AI tools that interest you
               </li>
               <li class="flex items-center gap-2">
-                <check-circle-icon />Join 200 professionals adopting AI tools for work
+                <check-circle-icon />Get personalized AI tool recommendations every week
               </li>
               <li class="flex items-center gap-2">
-                <check-circle-icon />Join 200 professionals adopting AI tools for work
+                <check-circle-icon />Free weekly newsletter with practical news, trending tools, tutorials and more
               </li>
             </ul>
 
