@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AiToolCard from '@/components/simple/AiToolCard.vue';
+import Button from '@/components/ui/button/Button.vue';
 import sanity from '@/lib/sanity';
 import type { AiTool } from '@/types';
 import { PortableText } from '@portabletext/vue';
@@ -150,10 +151,10 @@ onMounted(() => {
           </div>
 
           <div class="flex gap-5">
-            <button
-              class="btn flex gap-1 items-center border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
-              0</button>
-            <a class="btn flex gap-1 items-center" :href="tool.siteUrl">Visit Site <external-link-icon /></a>
+            <Button
+              class="flex gap-1 items-center border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
+              0</Button>
+            <Button class="flex gap-1 items-center" :href="tool.siteUrl">Visit Site <external-link-icon /></Button>
           </div>
         </div>
 
@@ -207,8 +208,8 @@ onMounted(() => {
 
     <div class="min-h-[inherit] grid content-center text-center" v-if="!loading && !tool">
       <h2 class="text-6xl font-bold pb-5">Resource not found</h2>
-      <button class="btn text-xl w-fit mx-auto" @click="$router.replace('/')">Go back to
-        home</button>
+      <Button class="text-xl w-fit mx-auto" @click="$router.replace('/')">Go back to
+        home</Button>
     </div>
   </main>
 </template>

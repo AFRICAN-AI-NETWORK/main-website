@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Button from '@/components/ui/button/Button.vue';
+</script>
+
 <template>
   <section id="hero"
     class="pt-[200px] xl:pt-[100px] 2xl:pt-0 lg:min-h-screen flex flex-col justify-between lg:flex-row gap-x-5 px-14 lg:px-20 pb-0 bg-cover bg-[url('/src/assets/hero-bg.jpg')] text-white">
@@ -11,8 +15,8 @@
         solutions.</p>
 
       <div class="flex flex-wrap gap-5 pb-8">
-        <a class="btn" href="https://discord.gg/hR4GsHSXkJ">Join the Network</a>
-        <a class="btn" href="#resources">Explore our Solutions</a>
+        <Button as="a" href="https://discord.gg/hR4GsHSXkJ">Join the Network</Button>
+        <Button as="a" href="#resources">Explore our Solutions</Button>
       </div>
     </div>
 

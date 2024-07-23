@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { AiTool } from '@/types';
 import { BookmarkIcon, ExternalLinkIcon, Star, VerifiedIcon } from 'lucide-vue-next';
+import Button from '../ui/button/Button.vue';
 
 defineProps<{
   tool: AiTool,
@@ -32,13 +33,13 @@ defineProps<{
     <p class="mt-3 text-sm line-clamp-2 overflow-ellipsis">{{ tool.description }}</p>
 
     <div v-if="featured" class="mt-3 flex gap-2">
-      <button
-        class="btn text-sm flex gap-1 items-center border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
-        0</button>
-      <a class="btn text-sm items-center gap-1 flex" :href="tool.siteUrl">Visit Site <external-link-icon /></a>
+      <Button
+        class="text-sm flex gap-1 items-center border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
+        0</Button>
+      <a class="text-sm items-center gap-1 flex" :href="tool.siteUrl">Visit Site <external-link-icon /></a>
     </div>
-    <a v-else class="block w-fit ml-auto mt-3 p-2 rounded-lg border-2 border-white text-sm"
+    <Button as="a" v-else class="block w-fit ml-auto mt-3 p-2 rounded-lg border-2 border-white text-sm"
       :href="`/ai-tools/${tool.slug}`">See
-      More</a>
+      More</Button>
   </div>
 </template>

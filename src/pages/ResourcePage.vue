@@ -7,6 +7,7 @@ import { onMounted, ref } from 'vue';
 import { onBeforeRouteUpdate, useRoute } from 'vue-router';
 
 import DiscordIcon from '@/components/simple/icons/DiscordIcon.vue';
+import Button from '@/components/ui/button/Button.vue';
 import { BookmarkIcon, CalendarIcon, CheckCircleIcon, FacebookIcon, LinkedinIcon } from 'lucide-vue-next';
 
 import NavBar from '@/components/layout/NavBar.vue';
@@ -93,9 +94,9 @@ onMounted(() => {
               </span>
             </p>
           </div>
-          <button
-            class="btn w-fit flex border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
-            0</button>
+          <Button
+            class="w-fit flex border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
+            0</Button>
         </div>
         <img :src="resource.imageUrl" class="h-96 w-full object-cover" :alt="resource.imageAlt" />
       </div>
@@ -136,8 +137,8 @@ onMounted(() => {
 
     <div class="min-h-[inherit] grid content-center text-center" v-if="!loading && !resource">
       <h2 class="text-6xl font-bold pb-5">Resource not found</h2>
-      <button class="btn text-xl w-fit mx-auto" @click="$router.replace('/')">Go back to
-        home</button>
+      <Button class="text-xl w-fit mx-auto" @click="$router.replace('/')">Go back to
+        home</Button>
     </div>
   </main>
 </template>
