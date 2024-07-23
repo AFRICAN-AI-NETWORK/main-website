@@ -15,16 +15,25 @@
   "dependencies": {
     "@portabletext/vue": "^1.0.10",
     "@sanity/client": "^6.15.9",
+    "@vee-validate/zod": "^4.13.2",
+    "@vueuse/core": "^10.11.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "lucide-vue-next": "^0.370.0",
     "notiflix": "^3.2.7",
+    "radix-vue": "^1.9.2",
     "swiper": "^11.1.0",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "vee-validate": "^4.13.2",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",
     "@tsconfig/node20": "^20.1.2",
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.12.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/eslint-config-prettier": "^8.0.0",

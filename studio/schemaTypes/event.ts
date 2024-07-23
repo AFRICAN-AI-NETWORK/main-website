@@ -1,13 +1,13 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'aiTool',
-  title: 'AI Tool',
+  name: 'event',
+  title: 'Event',
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Name',
+      name: 'title',
+      title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -18,34 +18,10 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'siteUrl',
-      title: 'Site Url',
+      name: 'linkToEvent',
+      title: 'Link To Register for Event',
       type: 'string',
       validation: (Rule) => [Rule.required(), Rule.regex(/^(http|https):\/\/[^ "]+$/)],
-    }),
-    defineField({
-      name: 'featured',
-      title: 'Featured',
-      type: 'boolean',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'pricingModel',
-      title: 'Pricing Model',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'stars',
-      title: 'Stars',
-      type: 'number',
-      validation: (Rule) => [Rule.required(), Rule.min(0), Rule.max(5)],
-    }),
-    defineField({
-      name: 'verified',
-      title: 'Verified',
-      type: 'boolean',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -65,8 +41,8 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Image',
+      name: 'image',
+      title: 'Event Image',
       type: 'image',
       options: {
         hotspot: true,
@@ -74,16 +50,21 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'ytVideoUrl',
-      title: 'Youtube Video URL',
+      name: 'location',
+      title: 'Location',
       type: 'string',
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
+      name: 'country',
+      title: 'Country',
+      type: 'reference',
+      to: {type: 'country'},
+    }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'datetime',
       validation: (Rule) => Rule.required(),
-      of: [{type: 'reference', to: {type: 'aiToolCategory'}}],
     }),
     defineField({
       name: 'publishedAt',
@@ -93,19 +74,13 @@ export default defineType({
       readOnly: true,
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-      validation: (Rule) => Rule.required(),
-    }),
   ],
 
   preview: {
     select: {
-      title: 'name',
+      title: 'title',
       author: 'author.name',
-      media: 'mainImage',
+      media: 'image',
     },
     prepare(selection) {
       const {author} = selection

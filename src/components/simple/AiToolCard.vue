@@ -13,10 +13,14 @@ defineProps<{
     <div class="flex gap-2">
       <img :src="tool.imageUrl" class="self-center h-16 w-16 min-h-0 min-w-0 rounded-xl bg-black bg-opacity-70"
         :alt="tool.imageAlt">
-      <div>
+      <div class="flex flex-col justify-center">
         <p class="text-lg font-bold">{{ tool.name }}</p>
         <p class="flex gap-1">
           <star v-for="i in tool.stars" :key="i" class="h-5 w-5 fill-yellow-400 text-yellow-400" />
+
+          <template v-if="tool.stars < 5">
+            <star v-for="i in 5 - tool.stars" :key="i" class="h-5 w-5 fill-gray-400 text-gray-400" />
+          </template>
         </p>
         <p class="mt-2 flex text-primary" v-if="featured && tool.verified"><verified-icon
             class="fill-primary stroke-white" />Verified

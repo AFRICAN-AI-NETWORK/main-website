@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'resource',
-  title: 'Resource',
+  name: 'course',
+  title: 'Course',
   type: 'document',
   fields: [
     defineField({
@@ -12,37 +12,51 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: 'description',
+      title: 'Description',
+      type: 'text',
       validation: (Rule) => Rule.required(),
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+    }),
+    defineField({
+      name: 'duration',
+      title: 'Duration',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'instructor',
+      title: 'Instructor',
+      type: 'reference',
+      to: {type: 'instructor'},
+    }),
+    defineField({
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      validation: (Rule) => Rule.required(),
+      of: [{type: 'reference', to: {type: 'courseCategory'}}],
+    }),
+    defineField({
+      name: 'linkToCourse',
+      title: 'Link to Course',
+      type: 'string',
+      validation: (Rule) => [Rule.required(), Rule.regex(/^(http|https):\/\/[^ "]+$/)],
     }),
     defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      validation: (Rule) => Rule.required(),
       to: {type: 'author'},
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Image',
+      name: 'image',
+      title: 'Cover Image',
       type: 'image',
-      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
-    }),
-    defineField({
-      name: 'category',
-      title: 'Category',
-      type: 'reference',
       validation: (Rule) => Rule.required(),
-      to: {type: 'resourceCategory'},
     }),
     defineField({
       name: 'publishedAt',
@@ -52,19 +66,13 @@ export default defineType({
       readOnly: true,
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-      validation: (Rule) => Rule.required(),
-    }),
   ],
 
   preview: {
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'mainImage',
+      media: 'image',
     },
     prepare(selection) {
       const {author} = selection

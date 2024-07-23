@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { FacebookIcon, LinkedinIcon } from 'lucide-vue-next';
+import { RouterLink } from 'vue-router';
 import DiscordIcon from '../simple/icons/DiscordIcon.vue';
 import TiktokIcon from '../simple/icons/TiktokIcon.vue';
 import WhatsappIcon from '../simple/icons/WhatsappIcon.vue';
@@ -81,7 +82,7 @@ import WhatsappIcon from '../simple/icons/WhatsappIcon.vue';
         <h3 class="mb-4 font-bold text-lg">Company</h3>
         <ul class="flex flex-col gap-y-2">
           <li>
-            <a href="#">About Us</a>
+            <router-link to="/about">About Us</router-link>
           </li>
           <li>
             <a href="#">Contact Us</a>

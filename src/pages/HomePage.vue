@@ -9,7 +9,7 @@ import ResourcesSection from '@/components/home/sections/ResourcesSection.vue';
 
 <template>
   <header>
-    <nav-bar />
+    <nav-bar transparent />
   </header>
 
   <main>

@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue';
+import { RouterLink } from "vue-router";
 
 const isOpen = ref(false);
 
-defineProps<{ blueBg?: boolean }>()
+defineProps<{ transparent?: boolean }>()
 </script>
 
 <template>
   <nav class="fixed z-50 inset-0 bottom-auto grid grid-cols-2 md:flex justify-between items-center px-7 py-5 text-white"
-    :class="blueBg ? 'bg-primary' : 'bg-black bg-opacity-10 backdrop-blur-md mix-blend-hard-light'">
+    :class="transparent ? 'bg-black bg-opacity-10 backdrop-blur-md mix-blend-hard-light' : 'bg-primary'">
     <a href="/">
       <p class="sr-only">Back to Home</p>
       <img src="@/assets/logo.png" alt="AAN logo" class="italic" width="100" height="100" />
@@ -26,16 +27,20 @@ defineProps<{ blueBg?: boolean }>()
 
     <ul class="flex flex-col mt-3 md:flex-row md:mt-0 gap-5" :class="isOpen ? 'flex' : 'hidden md:flex'">
       <li>
-        <a href="/ai-tools" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">AI Tools</a>
+        <router-link to="/about"
+          class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">About</router-link>
       </li>
       <li>
-        <a href="/#resources" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Resources</a>
+        <router-link to="/ai-tools" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">AI
+          Tools</router-link>
       </li>
       <li>
-        <a href="/#courses" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Courses</a>
+        <router-link to="/#resources"
+          class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Resources</router-link>
       </li>
       <li>
-        <a href="/#case-studies" class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Case-Studies</a>
+        <router-link to="/courses"
+          class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Courses</router-link>
       </li>
     </ul>
   </nav>

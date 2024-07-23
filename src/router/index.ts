@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomePage from '../pages/HomePage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,27 +7,73 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: HomeView
+      component: HomePage
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: () => import('../pages/AboutPage.vue')
+    },
+    {
+      path: '/auth',
+      name: 'Auth',
+      children: [
+        {
+          path: 'login',
+          name: 'Login',
+          component: () => import('../pages/auth/LoginPage.vue')
+        },
+        {
+          path: 'signup',
+          name: 'Signup',
+          component: () => import('../pages/auth/SignupPage.vue')
+        }
+      ]
     },
     {
       path: '/ai-tools',
       name: 'AiTools',
-      component: () => import('../views/AIToolsView.vue')
-    },
-    {
-      path: '/resources/:slug',
-      name: 'Resource',
-      component: () => import('../views/ResourceView.vue')
+      component: () => import('../pages/AiToolsPage.vue')
     },
     {
       path: '/ai-tools/:slug',
       name: 'AiTool',
-      component: () => import('../views/AIToolView.vue')
+      component: () => import('../pages/AiToolPage.vue')
+    },
+    {
+      path: '/ai-tool-categories/:name',
+      name: 'AiToolCategory',
+      component: () => import('../pages/AiToolCategoryPage.vue')
+    },
+    {
+      path: '/resources/:slug',
+      name: 'Resource',
+      component: () => import('../pages/ResourcePage.vue')
+    },
+    {
+      path: '/countries',
+      name: 'Countries',
+      component: () => import('../pages/CountriesPage.vue')
+    },
+    {
+      path: '/countries/:name',
+      name: 'Country',
+      component: () => import('../pages/CountryPage.vue')
+    },
+    {
+      path: '/courses',
+      name: 'Courses',
+      component: () => import('../pages/CoursesPage.vue')
+    },
+    {
+      path: '/events',
+      name: 'Events',
+      component: () => import('../pages/EventsPage.vue')
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: () => import('../views/NotFoundView.vue')
+      component: () => import('../pages/NotFoundPage.vue')
     }
   ]
 })

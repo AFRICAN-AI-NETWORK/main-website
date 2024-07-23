@@ -54,7 +54,7 @@ const fetchData = (slug: string) => {
   })
 
   // Obtain featured AI tools
-  sanity.fetch(`*[_type == "aiTool" && featured == true] {
+  sanity.fetch(`*[_type == "aiTool" && featured == true][0..5] | order(createdAt) {
     "id": _id,
     name,
     title,
@@ -174,7 +174,7 @@ onMounted(() => {
         </div>
 
         <div>
-          <div v-if="featuredTools.length > 0">
+          <div v-if="featuredTools && featuredTools.length > 0">
             <h2 class="text-3xl font-bold">Featured AI Tools</h2>
 
             <div class="grid gap-5 mt-5">
