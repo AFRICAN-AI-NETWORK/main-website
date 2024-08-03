@@ -8,8 +8,8 @@ import NavBar from '@/components/layout/NavBar.vue';
     <nav-bar />
   </header>
 
-  <main class="min-h-dvh pt-[200px] xl:pt-[100px] 2xl:pt-[150px] px-10 mb-10">
-    <h1 class="mb-2 text-6xl font-bold">About Us</h1>
+  <main class="min-h-dvh pt-[150px] xl:pt-[150px] px-10 pb-10">
+    <h1 class="mb-2 text-2xl lg:text-4xl xl:text-6xl font-bold">About Us</h1>
     <img class="w-full" :src="AboutImage" alt="The AAN logo">
 
     <p class="mt-10">In a world marked by rapid technological advancement and global
@@ -25,11 +25,11 @@ import NavBar from '@/components/layout/NavBar.vue';
       together the collective wisdom, resources, and aspirations of African nations, the AAN
       aims to create a vibrant ecosystem for AI research, development, and application.</p>
 
-    <h2 class="mt-10 text-5xl font-bold">Mission</h2>
+    <h2 class="mt-10 text-xl lg:text-3xl xl:text-5xl font-bold">Mission</h2>
     <p class="mt-5">To foster a culture of innovation and collaboration around AI in Africa, and to address the
       challenges and opportunities that AI presents for the continent.</p>
 
-    <h2 class="mt-10 text-5xl font-bold">Vision</h2>
+    <h2 class="mt-10 text-xl lg:text-3xl xl:text-5xl font-bold">Vision</h2>
     <p class="mt-5">To see Africa as a leader and a beneficiary of AI innovation, research, and education, and to
       improve the health and well-being of its people through the use of AI.</p>
   </main>
