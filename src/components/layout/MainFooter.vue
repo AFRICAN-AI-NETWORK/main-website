@@ -23,8 +23,7 @@ import WhatsappIcon from '../simple/icons/WhatsappIcon.vue';
           latest AI developers in the world.</p>
 
         <div class="w-fit">
-          <a class="mb-5 text-center block bg-primary text-white rounded-full px-8 py-2 w-full"
-            href="/#about-us">More</a>
+          <a class="mb-5 text-center block bg-primary text-white rounded-full px-8 py-2 w-full" href="/about">More</a>
 
           <div class="flex gap-6">
             <a href="https://www.facebook.com/groups/1490131391564053/?ref=share" title="Visit our Facebook Page">
@@ -54,16 +53,16 @@ import WhatsappIcon from '../simple/icons/WhatsappIcon.vue';
         <h3 class="mb-4 font-bold text-lg">AI Tool Categories</h3>
         <ul class="flex flex-col gap-y-2">
           <li>
-            <a href="#">Business & Productivity</a>
+            <a href="/ai-tools">Business & Productivity</a>
           </li>
           <li>
-            <a href="#">Design</a>
+            <a href="/ai-tools">Design</a>
           </li>
           <li>
-            <a href="#">Education</a>
+            <a href="/ai-tools">Education</a>
           </li>
           <li>
-            <a href="#">Research</a>
+            <a href="/ai-tools">Research</a>
           </li>
         </ul>
       </div>
