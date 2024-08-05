@@ -18,7 +18,6 @@ onMounted(() => {
     socials,
     "imageUrl": image.asset->url,
   }`).then((responseData) => {
-    console.log(responseData)
     countries.value = responseData
   }).catch(() => {
     Notify.failure('Error fetching countries, please try again later');

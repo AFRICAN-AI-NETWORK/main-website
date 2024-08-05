@@ -43,12 +43,34 @@ export type Category = {
   description: string
 }
 
+export type Project = {
+  name: string
+  description: any
+  country: Country
+  linkToProject: string
+  publishedAt: Date
+}
+
+export type Event = {
+  title: string
+  description: string
+  linkToEvent: string
+  slug: string
+  imageUrl: string
+  location: string
+  country: Country
+  date: Date
+  publishedAt: Date
+}
+
 export type Country = {
   id: string
   name: string
   numMembers: number
   imageUrl: string
   socials: { platform: string; handle: string }[]
+  projects?: Project[]
+  events?: Event[]
 }
 
 export type Feature = {

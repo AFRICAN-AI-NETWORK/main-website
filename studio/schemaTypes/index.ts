@@ -9,6 +9,7 @@ import event from './event'
 import feature from './feature'
 import instructor from './instructor'
 import partner from './partner'
+import project from './project'
 import resource from './resource'
 import resourceCategory from './resourceCategory'
 
@@ -21,6 +22,7 @@ export const schemaTypes = [
   blockContent,
   feature,
   partner,
+  project,
   country,
   event,
   instructor,

@@ -14,7 +14,6 @@ import { BookmarkIcon, CalendarIcon, CheckCircleIcon, ExternalLinkIcon, Facebook
 
 import NavBar from '@/components/layout/NavBar.vue';
 
-// Obtain slug from url
 const tool = ref<AiTool>();
 const featuredTools = ref<AiTool[]>([]);
 const loading = ref(false);
@@ -91,6 +90,7 @@ const toTitleCase = (str: string) => {
 }
 
 onBeforeRouteUpdate(async (to) => {
+  // Obtain slug from url
   const slug = to.params.slug;
   if (!slug || Array.isArray(slug)) return history.replaceState({}, '', '/'); // Redirect to home page if slug is missing or invalid
 
@@ -154,7 +154,8 @@ onMounted(() => {
             <Button
               class="flex gap-1 items-center border-2 border-primary text-primary hover:bg-slate-200 focus-visible:bg-slate-200 bg-white"><bookmark-icon />
               0</Button>
-            <Button class="flex gap-1 items-center" :href="tool.siteUrl">Visit Site <external-link-icon /></Button>
+            <Button as="a" class="flex gap-1 items-center" :href="tool.siteUrl">Visit Site
+              <external-link-icon /></Button>
           </div>
         </div>
 

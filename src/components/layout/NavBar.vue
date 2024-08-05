@@ -39,8 +39,8 @@ defineProps<{ transparent?: boolean }>()
           class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Resources</router-link>
       </li>
       <li>
-        <router-link to="/courses"
-          class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Courses</router-link>
+        <router-link to="/countries"
+          class="hover:text-blue-300 focus-visible:text-blue-300 transition-all">Countries</router-link>
       </li>
     </ul>
   </nav>
