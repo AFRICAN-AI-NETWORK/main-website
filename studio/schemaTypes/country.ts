@@ -90,19 +90,24 @@ export default defineType({
     defineField({
       name: 'socials',
       title: 'Socials',
-      type: 'object',
-      fields: [
+      type: 'array',
+      of: [
         {
-          name: 'platform',
-          title: 'Platform',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: 'handle',
-          title: 'Handle',
-          type: 'string',
-          validation: (Rule) => [Rule.required(), Rule.regex(/^(http|https):\/\/[^ "]+$/)],
+          type: 'object',
+          fields: [
+            {
+              name: 'platform',
+              title: 'Platform',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'handle',
+              title: 'Handle',
+              type: 'string',
+              validation: (Rule) => [Rule.required(), Rule.regex(/^(http|https):\/\/[^ "]+$/)],
+            },
+          ],
         },
       ],
       validation: (Rule) => Rule.required(),

@@ -43,6 +43,14 @@ export type Category = {
   description: string
 }
 
+export type Country = {
+  id: string
+  name: string
+  numMembers: number
+  imageUrl: string
+  socials: { platform: string; handle: string }[]
+}
+
 export type Feature = {
   id: string
   stats: number
