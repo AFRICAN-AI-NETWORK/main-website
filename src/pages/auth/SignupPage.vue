@@ -7,6 +7,7 @@ import * as z from 'zod';
 import NavBar from '@/components/layout/NavBar.vue';
 
 import { Button } from '@/components/ui/button';
+import Checkbox from '@/components/ui/checkbox/Checkbox.vue';
 import {
   FormControl,
   FormField,
