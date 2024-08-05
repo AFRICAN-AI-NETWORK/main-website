@@ -39,7 +39,7 @@ const onSubmit = handleSubmit((values) => {
     <nav-bar :blue-bg="true" />
   </header>
 
-  <main class="grid justify-items-center px-20 pt-[150px] xl:pt-[150px] pb-[200px]">
+  <main class="grid justify-items-center px-5 lg:px-20 pt-[150px] xl:pt-[150px] pb-[200px]">
     <div class="text-center">
       <h1 class="mb-1 text-xl lg:text-3xl font-semibold">Sign Up for an Account</h1>
       <h2 class="lg:text-lg opacity-80">Let’s get you all set so you can start creating your first onboarding experience
