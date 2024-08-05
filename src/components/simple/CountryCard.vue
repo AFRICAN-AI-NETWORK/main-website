@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import Button from '@/components/ui/button/Button.vue';
 import type { Country } from '@/types';
-import Button from '../ui/button/Button.vue';
 
 defineProps<{
   country: Country,

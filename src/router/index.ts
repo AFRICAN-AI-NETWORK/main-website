@@ -78,4 +78,12 @@ const router = createRouter({
   ]
 })
 
+const isAuthenticated = localStorage.getItem('aan_auth_token')!!
+
+router.beforeEach((to, from, next) => {
+  if (to.path.startsWith('/auth') && isAuthenticated) next({ name: 'Home' })
+  else if (!to.path.startsWith('/auth') && !isAuthenticated) next({ name: 'Login' })
+  else next()
+})
+
 export default router

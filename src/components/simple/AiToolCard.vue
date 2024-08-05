@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import Button from '@/components/ui/button/Button.vue';
 import type { AiTool } from '@/types';
 import { BookmarkIcon, ExternalLinkIcon, Star, VerifiedIcon } from 'lucide-vue-next';
-import Button from '../ui/button/Button.vue';
 
 defineProps<{
   tool: AiTool,
