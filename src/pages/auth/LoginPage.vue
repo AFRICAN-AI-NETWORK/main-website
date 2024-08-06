@@ -21,10 +21,9 @@ import { storageHandler } from '@/lib/localStorage';
 import { errHandler } from '@/lib/utils';
 import { EyeIcon, EyeOffIcon } from 'lucide-vue-next';
 import { Notify } from 'notiflix';
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const router = useRouter()
-const route = useRoute()
 
 const showPassword = ref(false)
 const rememberMe = ref(false)
@@ -56,7 +55,7 @@ const onSubmit = handleSubmit(async (values) => {
     <nav-bar :blue-bg="true" />
   </header>
 
-  <main class="grid justify-items-center px-5 lg:px-20 py-[150px] xl:pt-[150px]">
+  <main class="grid justify-items-center px-5 lg:px-20 py-[150px] xl:pt-[100px]">
     <div class="text-center">
       <h1 class="mb-1 text-xl lg:text-3xl font-semibold">Log in to Your Account</h1>
       <h2 class="lg:text-lg opacity-80">Log in to your account to be able to access the full functionalities of African

@@ -12,7 +12,7 @@ defineProps<{ transparent?: boolean }>()
     :class="transparent ? 'bg-black bg-opacity-10 backdrop-blur-md mix-blend-hard-light' : 'bg-primary'">
     <a href="/">
       <p class="sr-only">Back to Home</p>
-      <img src="@/assets/logo.png" alt="AAN logo" class="italic" width="100" height="100" />
+      <img src="@/assets/logo.svg" alt="AAN logo" class="italic h-10 lg:h-14" />
     </a>
 
     <button type="button"

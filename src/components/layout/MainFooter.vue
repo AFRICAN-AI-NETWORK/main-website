@@ -11,7 +11,7 @@ import WhatsappIcon from '../simple/icons/WhatsappIcon.vue';
     <div
       class="py-14 px-10 grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] content-center lg:justify-items-end lg:grid-cols-[45%_18%_18%_18%] gap-y-10">
       <div>
-        <img src="@/assets/logo.png" alt="AAN logo" class="italic mb-2" width="100" height="100" />
+        <img src="@/assets/logo.svg" alt="AAN logo" class="italic mb-2 h-10 lg:h-14" />
 
         <p class="self-start mb-8 2xl:mr-0">African AI Network is a community-driven network that brings together
           AI

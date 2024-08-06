@@ -10,7 +10,7 @@ import HeroSection from '@/components/ai-tools/sections/HeroSection.vue';
     <nav-bar :blue-bg="true" />
   </header>
 
-  <main class="min-h-dvh pt-[200px] xl:pt-[100px] 2xl:pt-[150px]">
+  <main class="min-h-dvh pt-[150px] xl:pt-[100px] 2xl:pt-[150px]">
     <hero-section />
     <ai-tools-categories />
   </main>
