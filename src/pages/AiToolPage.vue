@@ -109,7 +109,7 @@ onMounted(() => {
   <nav-bar :blue-bg="true" />
 
   <main class="min-h-dvh">
-    <div v-if="tool" class="pt-40 xl:pt-36 p-16 p-5 lg:p-16">
+    <div v-if="tool" class="pt-40 xl:pt-36 lg:p-16">
 
       <div class="grid gap-5 xl:grid-cols-2">
         <div class="flex flex-col justify-between">
