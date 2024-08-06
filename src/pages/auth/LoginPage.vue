@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod';
 import { useForm } from 'vee-validate';
-import { h } from 'vue';
+import { ref } from 'vue';
 import * as z from 'zod';
 
 import NavBar from '@/components/layout/NavBar.vue';
@@ -16,21 +16,38 @@ import {
   FormMessage
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { toast } from '@/components/ui/toast';
+import axiosInstance from '@/lib/axios';
+import { storageHandler } from '@/lib/localStorage';
+import { errHandler } from '@/lib/utils';
+import { EyeIcon, EyeOffIcon } from 'lucide-vue-next';
+import { Notify } from 'notiflix';
+import { useRoute, useRouter } from 'vue-router';
+
+const router = useRouter()
+const route = useRoute()
+
+const showPassword = ref(false)
+const rememberMe = ref(false)
 
 const formSchema = toTypedSchema(z.object({
-  username: z.string().min(2).max(50),
+  email: z.string().email(),
+  password: z.string().min(8),
 }))
 
-const { handleSubmit } = useForm({
+const { handleSubmit, isSubmitting, errors } = useForm({
   validationSchema: formSchema,
 })
 
-const onSubmit = handleSubmit((values) => {
-  toast({
-    title: 'You submitted the following values:',
-    description: h('pre', { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' }, h('code', { class: 'text-white' }, JSON.stringify(values, null, 2))),
-  })
+const onSubmit = handleSubmit(async (values) => {
+  try {
+    const response = await axiosInstance.post("/auth/login", values)
+    storageHandler.setToken(response.data.accessToken)
+    Notify.success("Login successful")
+    await router.replace("/")
+  } catch (err) {
+    console.error("An error occurred while trying to log in", err)
+    Notify.failure(errHandler(err))
+  }
 })
 </script>
 
@@ -39,7 +56,7 @@ const onSubmit = handleSubmit((values) => {
     <nav-bar :blue-bg="true" />
   </header>
 
-  <main class="grid justify-items-center px-5 lg:px-20 pt-[150px] xl:pt-[150px] pb-[200px]">
+  <main class="grid justify-items-center px-5 lg:px-20 py-[150px] xl:pt-[150px]">
     <div class="text-center">
       <h1 class="mb-1 text-xl lg:text-3xl font-semibold">Log in to Your Account</h1>
       <h2 class="lg:text-lg opacity-80">Log in to your account to be able to access the full functionalities of African
@@ -47,12 +64,13 @@ const onSubmit = handleSubmit((values) => {
         Network</h2>
     </div>
 
-    <form class="mt-14 w-full lg:max-w-[80%] space-y-6" @submit="onSubmit">
-      <FormField v-slot="{ componentField }" name="username">
+    <form class="mt-14 w-full lg:max-w-[80%] space-y-6" @submit="onSubmit"
+      :disabled="isSubmitting || Object.values(errors).length > 0">
+      <FormField v-slot="{ componentField }" name="email">
         <FormItem>
-          <FormLabel>Username</FormLabel>
+          <FormLabel>Email</FormLabel>
           <FormControl>
-            <Input type="text" aria-label="Username" placeholder="Enter your username" v-bind="componentField" />
+            <Input type="email" aria-label="Email" placeholder="Enter your email" v-bind="componentField" required />
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -61,7 +79,15 @@ const onSubmit = handleSubmit((values) => {
         <FormItem>
           <FormLabel>Password</FormLabel>
           <FormControl>
-            <Input type="password" aria-label="Password" placeholder="Enter your password" v-bind="componentField" />
+            <div class="relative">
+              <Input :type="showPassword ? 'text' : 'password'" aria-label="Password" placeholder="Enter your password"
+                v-bind="componentField" required />
+              <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2"
+                :title="showPassword ? 'Hide password' : 'Show password'" @click="showPassword = !showPassword">
+                <EyeOffIcon v-if="showPassword" class="w-4 h-4" />
+                <EyeIcon v-else class="w-4 h-4" />
+              </button>
+            </div>
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -69,7 +95,7 @@ const onSubmit = handleSubmit((values) => {
 
       <div class="flex w-full justify-between">
         <div className="flex items-center space-x-2">
-          <Checkbox id="terms" />
+          <Checkbox id="terms" :checked="rememberMe" @update:checked="value => rememberMe = value" />
           <label htmlFor="terms"
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             Remember Me
@@ -78,16 +104,20 @@ const onSubmit = handleSubmit((values) => {
 
         <Button as="a" variant="link" href="#">Forgot Password?</Button>
       </div>
-      <Button class="font-bold w-full" type="submit">
-        LOG IN
+      <Button :disabled="isSubmitting || Object.values(errors).length > 0" class="font-bold w-full" type="submit">
+        <span class="flex gap-2 items-center" v-if="isSubmitting">
+          <Loader class="animate-spin w-4 h-4" />
+          Please wait
+        </span>
+        <span v-else>LOG IN</span>
       </Button>
     </form>
   </main>
 
   <footer class="bg-primary text-primary-foreground min-h-[400px] grid text-center place-items-center">
-    <div class="flex flex-col gap-3 text-2xl lg:max-w-[500px]">
+    <div class="flex flex-col gap-3 text-xl lg:text-2xl lg:max-w-[500px] px-2">
       <h3 class="font-bold">Don't have an account yet?</h3>
-      <p>Let’s get you all set up so you can have your first onboarding experience</p>
+      <p class="text-lg lg:text-xl">Let’s get you all set up so you can have your first onboarding experience</p>
 
       <Button as="a" href="/auth/signup" class="font-bold w-fit mx-auto border-white bg-transparent" size="lg"
         variant="outline">SIGN

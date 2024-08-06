@@ -1,3 +1,4 @@
+import { storageHandler } from '@/lib/localStorage'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
 
@@ -78,11 +79,14 @@ const router = createRouter({
   ]
 })
 
-const isAuthenticated = localStorage.getItem('aan_auth_token')!!
+const isAuthenticated = storageHandler.getToken()!!
 
 router.beforeEach((to, from, next) => {
-  if (to.path.startsWith('/auth') && isAuthenticated) next({ name: 'Home' })
-  else if (!to.path.startsWith('/auth') && !isAuthenticated) next({ name: 'Login' })
+  if (to.name === 'Home') next()
+  else if (to.path.startsWith('/auth') && isAuthenticated) next({ name: 'Home' })
+  else if (!to.path.startsWith('/auth') && !isAuthenticated)
+    next({ name: 'Login', state: { redirectUrl: to.path } })
+    
   else next()
 })
 
