@@ -68,7 +68,7 @@ onMounted(() => {
   <nav-bar :blue-bg="true" />
 
   <main class="min-h-dvh">
-    <div v-if="resource" class="pt-40 xl:pt-36 p-16">
+    <div v-if="resource" class="pt-40 xl:pt-36 p-5 lg:p-16">
       <div class="grid gap-5 xl:grid-cols-2 items-center">
         <div class="flex flex-col justify-center gap-3">
           <p class="text-5xl font-bold">{{ resource.title }}</p>

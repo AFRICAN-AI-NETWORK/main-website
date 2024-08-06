@@ -84,9 +84,7 @@ const isAuthenticated = storageHandler.getToken()!!
 router.beforeEach((to, from, next) => {
   if (to.name === 'Home') next()
   else if (to.path.startsWith('/auth') && isAuthenticated) next({ name: 'Home' })
-  else if (!to.path.startsWith('/auth') && !isAuthenticated)
-    next({ name: 'Login', state: { redirectUrl: to.path } })
-    
+  else if (!to.path.startsWith('/auth') && !isAuthenticated) next({ name: 'Login' })
   else next()
 })
 
