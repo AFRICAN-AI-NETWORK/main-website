@@ -19,9 +19,10 @@ defineProps<{
         <p><span class="font-bold">Location:</span> {{ event.location }}</p>
         <p><span class="font-bold">Date:</span> {{ new Date(event.date).toDateString() }}</p>
         <p class="mt-1 text-lg lg:text-xl flex gap-1">
-          <span class="text-primary">{{ event.title }}:</span> {{ event.description }}
+          <span class="text-primary max-w-[40ch]">{{ event.title }}:</span> {{ event.description }}
         </p>
-        <Button class="flex gap-2 self-end ml-auto capitalize">Purchase Tickets <external-link-icon /></Button>
+        <Button as="a" :href="event.linkToEvent" target="_blank" class="flex gap-2 self-end ml-auto capitalize">Purchase
+          Tickets <external-link-icon /></Button>
       </div>
     </div>
   </div>
