@@ -89,6 +89,35 @@ const toTitleCase = (str: string) => {
   });
 }
 
+// Obtain featured AI tools
+sanity.fetch(`*[_type == "aiTool" && featured == true][0..5] | order(createdAt) {
+    "id": _id,
+    name,
+    title,
+    categories[]->,
+    pricingModel,
+    description,
+    stars,
+    body,
+    verified,
+    siteUrl,
+    featured,
+    "slug": slug.current,
+    "authorName": author->name,
+    "authorBio": author->bio,
+    "authorImageUrl": author->image.asset->url,
+    ytVideoUrl,
+    "imageUrl": mainImage.asset->url,
+    "imageAlt": mainImage.alt,
+    "createdAt": _createdAt,
+    "updatedAt": _updatedAt
+}`).then((responseData) => {
+  featuredTools.value = responseData;
+}).catch(() => {
+  Notify.failure('Error fetching tool, please try again later');
+}).finally(() => {
+})
+
 onBeforeRouteUpdate(async (to) => {
   // Obtain slug from url
   const slug = to.params.slug;

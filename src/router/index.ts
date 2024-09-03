@@ -42,7 +42,7 @@ const router = createRouter({
       component: () => import('../pages/AiToolPage.vue')
     },
     {
-      path: '/ai-tool-categories/:name',
+      path: '/ai-tool-categories/:title',
       name: 'AiToolCategory',
       component: () => import('../pages/AiToolCategoryPage.vue')
     },

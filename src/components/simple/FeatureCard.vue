@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  stats?: number,
+  stats?: string,
   description: string,
   secondary?: boolean
 }>()
