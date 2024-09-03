@@ -75,7 +75,7 @@ export type Country = {
 
 export type Feature = {
   id: string
-  stats: number
+  stats: string
   description: string
 }
 
