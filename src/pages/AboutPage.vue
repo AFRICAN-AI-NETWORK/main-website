@@ -12,27 +12,55 @@ import NavBar from '@/components/layout/NavBar.vue';
     <h1 class="mb-2 text-2xl lg:text-4xl xl:text-6xl font-bold" aria-describedby="about-us">About Us</h1>
     <img class="w-full" :src="AboutImage" alt="The AAN logo">
 
-    <p class="mt-10" id="about-us">In a world marked by rapid technological advancement and global
-      interconnectedness, Africa stands at a crossroads of immense potential. The
-      continent, endowed with abundant natural resources, a youthful population, and a rich
-      cultural tapestry, possesses the raw materials for a transformative digital revolution.
-      Artificial Intelligence (AI) emerges as a powerful catalyst for unlocking this
-      potential. It offers the promise of addressing critical challenges such as poverty,
-      disease, and inequality while driving economic growth, innovation, and social
-      development.
-      The African AI Network (AAN) is a visionary initiative that recognizes the
-      imperative of a united African front in harnessing the power of AI. By bringing
-      together the collective wisdom, resources, and aspirations of African nations, the AAN
-      aims to create a vibrant ecosystem for AI research, development, and application.</p>
+    <div class="grid gap-2 text-lg font-semibold mt-10" id="about-us">
+      <p>
+        In this rapidly evolving digital age, Artificial Intelligence (AI) has emerged as a
+        transformative force with the potential to reshape our world. In Africa, a continent
+        brimming with talent, innovation, and untapped potential, AI represents a beacon of
+        hope, a catalyst for economic growth, and a tool for solving some of our most pressing
+        challenges.
+      </p>
+
+      <p>
+        At AAN (African AI Network), we recognize the immense power of AI to drive positive
+        change across the continent. Our vision is to foster a thriving AI ecosystem in Africa,
+        where innovation flourishes, talent is nurtured, and AI is harnessed for the greater good
+        of all Africans.
+      </p>
+
+
+      <p>
+        We believe that AI is not just a technological advancement; it is a tool for empowerment.
+        By democratizing access to AI education and resources, we are empowering individuals
+        and communities to create their own futures, to build innovative solutions to local
+        problems, and to contribute to a more prosperous and equitable Africa.
+      </p>
+    </div>
 
     <h2 class="mt-10 text-xl lg:text-3xl xl:text-5xl font-bold" aria-describedby="mission">Mission</h2>
-    <p class="mt-5" id="mission">To foster a culture of innovation and collaboration around AI in Africa, and to address
-      the
-      challenges and opportunities that AI presents for the continent.</p>
+    <ol class="mt-5 ml-7 list-decimal" id="mission">
+      <li><span class="font-bold">Empowerment:</span> To empower individuals and communities across Africa with the
+        knowledge, skills, and resources to harness the transformative power of AI.</li>
+      <li><span class="font-bold">Innovation:</span> To foster a culture of innovation and entrepreneurship in the
+        African
+        AI ecosystem, encouraging the development of cutting-edge AI solutions that
+        address local needs and global challenges.</li>
+      <li><span class="font-bold">Collaboration:</span> To build a collaborative and inclusive network of AI
+        stakeholders
+        across Africa, including researchers, entrepreneurs, policymakers, educators,
+        and civil society organizations.</li>
+      <li><span class="font-bold">Advocacy:</span> To advocate for responsible and ethical AI development and
+        deployment in Africa, ensuring that AI is used for the benefit of all Africans and
+        not to exacerbate existing inequalities.</li>
+      <li><span class="font-bold">Impact:</span> To measure and demonstrate the tangible impact of AI on African
+        societies, economies, and environments, showcasing the positive transformation
+        that AI can bring to the continent.</li>
+    </ol>
 
     <h2 class="mt-10 text-xl lg:text-3xl xl:text-5xl font-bold" aria-describedby="vision">Vision</h2>
-    <p class="mt-5" id="vision">To see Africa as a leader and a beneficiary of AI innovation, research, and education,
-      and to
-      improve the health and well-being of its people through the use of AI.</p>
+    <p class="mt-5" id="vision">A vibrant and inclusive Africa where artificial intelligence (AI) is harnessed to drive
+      sustainable development, economic prosperity, and social progress for all. We envision
+      a future where AI-powered solutions address Africa's unique challenges, empower
+      individuals and communities, and create opportunities for a brighter future.</p>
   </main>
 </template>
