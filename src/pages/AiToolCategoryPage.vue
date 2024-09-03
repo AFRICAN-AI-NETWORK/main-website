@@ -64,15 +64,17 @@ onMounted(() => {
         <h2 class="text-lg 2xl:text-xl text-secondary">{{ category?.description }}</h2>
       </div>
 
-      <template v-if="tools.length > 0">
-        <div class="mt-10 grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-5">
-          <ai-tool-card v-for="tool in tools.slice(0, showing)" :key="tool.id" :tool="tool" />
-        </div>
+      <div class="grid mt-16">
+        <template v-if="tools.length > 0">
+          <div class="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-5">
+            <ai-tool-card v-for="tool in tools.slice(0, showing)" :key="tool.id" :tool="tool" />
+          </div>
 
-        <button v-if="showing < tools.length" @click="increaseShowing"
-          class="mt-5 bg-primary text-white rounded-full px-8 py-2 w-fit mx-auto">See More</button>
-      </template>
-      <p v-else class="font-semibold text-lg mt-5">No tool found</p>
+          <button v-if="showing < tools.length" @click="increaseShowing"
+            class="mt-5 bg-primary text-white rounded-full px-8 py-2 w-fit mx-auto">See More</button>
+        </template>
+        <p v-else class="font-semibold text-lg mt-5">No tool found</p>
+      </div>
     </template>
 
     <p v-else-if="!loading && !category" class="text-3xl text-center">Category Not Found</p>
