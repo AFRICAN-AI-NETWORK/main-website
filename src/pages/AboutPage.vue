@@ -9,8 +9,8 @@ import NavBar from '@/components/layout/NavBar.vue';
   </header>
 
   <main class="min-h-dvh pt-[150px] xl:pt-[150px] px-10 pb-10">
-    <h1 class="mb-2 text-2xl lg:text-4xl xl:text-6xl font-bold" aria-describedby="about-us">About Us</h1>
-    <img class="w-full" :src="AboutImage" alt="The AAN logo">
+    <img class="mb-5 w-full" :src="AboutImage" alt="The AAN logo">
+    <h1 class="text-2xl lg:text-4xl xl:text-6xl font-bold" aria-describedby="about-us">About Us</h1>
 
     <div class="grid gap-2 text-lg font-semibold mt-10" id="about-us">
       <p>
