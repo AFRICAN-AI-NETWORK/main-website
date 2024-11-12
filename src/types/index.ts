@@ -84,3 +84,27 @@ export type Partner = {
   name: string
   logo: string
 }
+
+export type Course = {
+  id: string
+  title: string
+  description: string
+  duration: string
+  instructor?: string
+  categories: CourseCategory[]
+  linkToCourse: string
+  author: string
+  imageUrl: string
+  imageAlt: string
+  createdAt: Date
+  updatedAt: Date
+}
+
+export type CourseCategory = {
+  id: string
+  title: string
+  description: string
+  author: string
+  createdAt: Date
+  updatedAt: Date
+}
