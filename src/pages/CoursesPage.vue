@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/select';
 import sanity from '@/lib/sanity';
 import type { Course, CourseCategory } from '@/types';
-import { Loading, Notify } from 'notiflix';
+import { Notify } from 'notiflix';
 import { onMounted, ref, watch } from 'vue';
 
 const courses = ref<Course[]>([])
@@ -30,7 +30,6 @@ watch(filter, () => {
 
 onMounted(() => {
   const fetchData = () => {
-    Loading.hourglass();
     loading.value = true;
 
     sanity.fetch(`*[_type == "course"] | order(updatedAt desc) {
@@ -64,7 +63,6 @@ onMounted(() => {
       }).catch(() => {
         Notify.failure('Error fetching course categories, please try again later');
       }).finally(() => {
-        Loading.remove();
         loading.value = false;
       })
     })

@@ -45,8 +45,11 @@ onMounted(() => {
     <h1 class="text-xl sm:text-3xl font-bold">
       Events</h1>
 
-    <div class="mt-5 grid gap-5">
+    <div v-if="events.length > 0" class="mt-5 grid gap-5">
       <event-card v-for="event in events" :key="event.title" :event="event" />
+    </div>
+    <div v-else>
+      <p class="text-center text-lg">No event found. Please check back later.</p>
     </div>
   </main>
 </template>
