@@ -27,5 +27,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "src/swiper.d.ts"]
+  "include": ["src"]
 }
