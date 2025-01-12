@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
 import FuturisticRobot from '@/assets/futuristic-robot.svg';
+import { Button } from '@/components/ui/button';
 import React from 'react';
 
 const HeroSection: React.FC = () => {
@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
             <a href="https://discord.gg/hR4GsHSXkJ">Join the Network</a>
           </Button>
           <Button asChild>
-            <a href="#resources">Explore our Solutions</a>
+            <a href="/#resources">Explore our Solutions</a>
           </Button>
         </div>
       </div>

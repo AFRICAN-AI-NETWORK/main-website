@@ -105,7 +105,7 @@ const SignupPage: React.FC = () => {
         <NavBar />
       </header>
 
-      <main className="grid justify-items-center px-5 lg:px-20 py-[150px] xl:pt-[100px] pb-[200px]">
+      <main className="grid justify-items-center px-5 lg:px-20 py-[150px] xl:pt-[100px] 2xl:pt-[150px] pb-[200px]">
         <div className="text-center">
           <h1 className="mb-1 text-xl lg:text-3xl font-semibold">
             Sign Up for an Account
@@ -193,6 +193,7 @@ const SignupPage: React.FC = () => {
                       <Input
                         type={showPassword ? 'text' : 'password'}
                         aria-label="Password"
+                        autoComplete="new-password"
                         placeholder="Enter your password"
                         {...field}
                         required

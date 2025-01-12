@@ -66,7 +66,7 @@ const FeaturesAndPartnersSection: React.FC = () => {
             )}
 
             {features && features.length > 0 && (
-              <div className="grid md:grid-cols-2 gap-y-8 gap-x-16 lg:px-20">
+              <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] place-content-center gap-y-8 gap-x-16 lg:px-20">
                 {features.map((feature, i) => (
                   <FeatureCard
                     key={feature.id}

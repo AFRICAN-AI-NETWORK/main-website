@@ -1,13 +1,14 @@
-import React, { lazy, Suspense } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-  useLocation,
-} from 'react-router-dom';
+import LoadingSpinner from '@/components/ui/loading-spinner';
 import { storageHandler } from '@/lib/localStorage';
 import HomePage from '@/pages/HomePage';
+import React, { lazy, Suspense } from 'react';
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const LoginPage = lazy(() => import('@/pages/auth/LoginPage'));
@@ -23,12 +24,12 @@ const EventsPage = lazy(() => import('@/pages/EventsPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 // Authentication Check
-const isAuthenticated = !!storageHandler.getToken();
+const isAuthenticated = () => !!storageHandler.getToken();
 
 const RequireAuth: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated()) {
     // Redirect to login page if not authenticated
     return <Navigate to="/auth/login" state={{ from: location }} replace />;
   }
@@ -39,7 +40,7 @@ const RequireAuth: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 const RedirectIfAuthenticated: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  if (isAuthenticated) {
+  if (isAuthenticated()) {
     // Redirect to home if already authenticated
     return <Navigate to="/" replace />;
   }
@@ -50,7 +51,7 @@ const RedirectIfAuthenticated: React.FC<{ children: React.ReactNode }> = ({
 const AppRouter: React.FC = () => {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LoadingSpinner fullScreen />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

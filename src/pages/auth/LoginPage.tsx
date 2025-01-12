@@ -70,7 +70,7 @@ const LoginPage: React.FC = () => {
         <NavBar />
       </header>
 
-      <main className="grid justify-items-center px-5 lg:px-20 py-[150px] xl:pt-[100px]">
+      <main className="grid justify-items-center px-5 lg:px-20 py-[150px] xl:pt-[100px] 2xl:pt-[150px]">
         <div className="text-center">
           <h1 className="mb-1 text-xl lg:text-3xl font-semibold">
             Log in to Your Account
