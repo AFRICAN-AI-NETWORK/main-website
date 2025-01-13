@@ -109,7 +109,10 @@ const MainFooter: React.FC = () => {
       </div>
 
       <div className="flex flex-wrap p-5 gap-3 border border-white border-r-0 border-l-0">
-        <p>2024 African AI Network LLC, All rights reserved.</p>
+        <p>
+          {new Date().getFullYear()} African AI Network LLC, All rights
+          reserved.
+        </p>
         <a
           href="#"
           className="underline hover:text-blue-300 focus-visible:text-blue-300 transition-colors"
