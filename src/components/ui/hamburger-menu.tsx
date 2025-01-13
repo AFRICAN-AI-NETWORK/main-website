@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 interface HamburgerMenuProps {
   isOpen: boolean;
